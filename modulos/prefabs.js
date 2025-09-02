@@ -121,7 +121,7 @@ export function createNavBar(nivel) {
         const pergunta = await customConfirm("Deseja realmente sair dessa conta?");
 
         if(pergunta) {
-            await fetch(endpoint + '/api/auth/logout', {
+            await fetch(endpoint + '/api/oz/auth/logout', {
                 method: 'GET', 
                 credentials: 'include',
                 headers: {
@@ -220,6 +220,7 @@ export function createFooterAreaLogada(nivel) {
 
 export function createSidebar(nivel, paginaAtual) {
     const usuarioInfo = JSON.parse(localStorage.getItem("usuarioInfo"));
+    console.log(usuarioInfo);
     const cargoDoUsuario = usuarioInfo.Cargo;
 
     const textUserRules = document.querySelectorAll(".user-rule");
@@ -357,7 +358,7 @@ export function createSidebar(nivel, paginaAtual) {
             const pergunta = await customConfirm("Deseja realmente sair dessa conta?");
 
             if(pergunta) {
-                await fetch(endpoint + '/api/oab/auth/logout', {
+                await fetch(endpoint + '/api/oz/auth/logout', {
                     method: 'GET', 
                     credentials: 'include',
                     headers: {

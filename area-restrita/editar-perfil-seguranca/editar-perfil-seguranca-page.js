@@ -24,7 +24,7 @@ async function editarUsuarioPassword() {
             
           telaCarregamento.style.display = "flex";
 
-          const response = await fetchComAutoRefresh(endpoint + '/api/auth/editarUsuarioPassword', {
+          const response = await fetchComAutoRefresh(endpoint + '/api/oz/auth/editarUsuarioPassword', {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json',

@@ -17,7 +17,7 @@ export async function checkAuthStatus(path = "../..") {
     }
     
     try {
-        const response = await fetchComAutoRefresh(endpoint + '/api/oab/auth/status', {
+        const response = await fetchComAutoRefresh(endpoint + '/api/oz/auth/status', {
             method: 'GET',
             credentials: 'include'
         });

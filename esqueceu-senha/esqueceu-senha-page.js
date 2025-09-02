@@ -16,7 +16,7 @@ async function enviarEmailDeRedefinicao(){
     try {
         document.getElementById("div-carregando-fundo").style.display = "flex";
 
-        const response = await fetch(endpoint + '/api/auth/requestResetPassword', {
+        const response = await fetch(endpoint + '/api/oz/auth/requestResetPassword', {
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json',

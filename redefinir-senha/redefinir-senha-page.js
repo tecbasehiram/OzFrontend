@@ -22,7 +22,7 @@ async function redefinirSenha(token){
     try {
         document.getElementById("div-carregando-fundo").style.display = "flex";
 
-        const response = await fetch(endpoint + '/api/auth/resetPassword', {
+        const response = await fetch(endpoint + '/api/oz/auth/resetPassword', {
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json',

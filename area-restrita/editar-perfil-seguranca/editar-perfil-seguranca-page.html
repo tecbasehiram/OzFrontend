@@ -13,7 +13,7 @@
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
-    <title>Hiram - Área Restrita</title>
+    <title>Oz Viagens e Turismo - Área Restrita</title>
     <meta name="description" content="" />
 
     <link rel="icon" type="image/x-icon" href="../../assets/img/favicon/favicon.ico" />
@@ -54,27 +54,21 @@
   <body style="font-family: 'FontLogo', 'Arial Narrow', Arial, sans-serif;">
 
     <script type="module"> 
-      import { protegerPagina } from '../../modulos/authGatekeeper.js';
+      import { checkAuthStatus } from '../../modulos/authGatekeeper.js';
       import { createModals, createDivCarregandoFundo, createDivFundo } from '../../modulos/prefabs.js';
 
       createModals();
       createDivCarregandoFundo();
       createDivFundo();
 
-      await protegerPagina([
-        "MASTER",
-        "ADMIN",
-        "CLIENTE",
-        "MUNACCESS",
-        "MOTORISTA"
-      ], "../.."); 
+      await checkAuthStatus("../.."); 
     </script>
 
     <div class="layout-wrapper layout-content-navbar conteudo-restrito">
       <div class="layout-container">
 
         <aside id="layout-menu" class="layout-menu menu-vertical menu">
-          <div class="app-brand demo" style="padding-inline: 0 !important;">
+          <div class="app-brand demo" style="padding-inline: 0 !important; height: auto !important; margin-bottom: 9px;">
             <!-- Brand Logo -->
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
@@ -367,13 +361,13 @@
     <script src="../../assets/js/pages-account-settings-security.js?v=202508100006"></script>
     <script type="module" src="./editar-perfil-seguranca-page.js?v=202508100006"></script>
 
-    <link rel="stylesheet" href="../../identidade-visual.css?v=202508100006" />    
+    <link rel="stylesheet" href="../identidade-visual.css?v=202508100006" />    
 
     <script type="module"> 
-      import { createSidebar, createFooter } from '../../modulos/prefabs.js';
+      import { createSidebar, createFooterAreaLogada } from '../../modulos/prefabs.js';
       
       createSidebar("../..", "editar-senha");
-      createFooter("../..");
+      createFooterAreaLogada("../..");
       
     </script>
   </body>

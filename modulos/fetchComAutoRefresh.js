@@ -9,7 +9,7 @@ export async function fetchComAutoRefresh(url, options = {}, path="../..") {
   if (response.status === 401 || response.status === 403) {
     console.warn('AccessToken expirado, tentando renovar...');
 
-    const refresh = await fetch(endpoint + '/api/auth/refresh', {
+    const refresh = await fetch(endpoint + '/api/oz/auth/refresh', {
       method: 'GET',
       credentials: 'include',
     });

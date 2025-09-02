@@ -7,7 +7,7 @@ class Chat {
     constructor() {
         this.telaCarregamento = document.getElementById("div-carregando-fundo");
 
-        this.socket = io(`${endpoint}`, {
+        this.socket = io(`${endpoint}/oz-chat`, {
             withCredentials: true,
             reconnection: true,
             reconnectionAttempts: 40,
@@ -349,7 +349,7 @@ class Chat {
         try {
             this.telaCarregamento.style.display = "flex";
     
-            const response = await fetchComAutoRefresh(`${endpoint}/api/oab/chat/usuario`, {
+            const response = await fetchComAutoRefresh(`${endpoint}/api/oz/chat/usuario`, {
                 method: 'GET',
                 credentials: 'include',
                 headers: {
@@ -384,7 +384,7 @@ class Chat {
         try {
             this.telaCarregamento.style.display = "flex";
     
-            const response = await fetchComAutoRefresh(`${endpoint}/api/oab/chat/contatos`, {
+            const response = await fetchComAutoRefresh(`${endpoint}/api/oz/chat/contatos`, {
                 method: 'GET',
                 credentials: 'include',
                 headers: {
@@ -426,7 +426,7 @@ class Chat {
         try {
             this.telaCarregamento.style.display = "flex";
     
-            const response = await fetchComAutoRefresh(`${endpoint}/api/oab/chat/conversas`, {
+            const response = await fetchComAutoRefresh(`${endpoint}/api/oz/chat/conversas`, {
                 method: 'GET',
                 credentials: 'include',
                 headers: {
@@ -451,6 +451,7 @@ class Chat {
 
             if(dados.payload.length === 0) {
                 document.querySelector(".chat-list-item-0").classList.remove("d-none");
+                document.querySelector(".chat-list-item-0").removeEventListener("click", this._handleConversas);
             }
 
             dados.payload.forEach(conversa => {
@@ -468,7 +469,7 @@ class Chat {
         try {
             this.telaCarregamento.style.display = "flex";
     
-            const url = new URL(`${endpoint}/api/oab/chat/mensagens`);
+            const url = new URL(`${endpoint}/api/oz/chat/mensagens`);
             url.searchParams.set('idContato', idContato);
             url.searchParams.set('limit', String(limit));
             if (before) url.searchParams.set('before', new Date(before).toISOString());
@@ -746,7 +747,7 @@ class Chat {
             try {
                 this.telaCarregamento.style.display = "flex";
     
-                const response = await fetchComAutoRefresh(`${endpoint}/api/oab/chat/editarUsuario`, {
+                const response = await fetchComAutoRefresh(`${endpoint}/api/oz/chat/editarUsuario`, {
                     method: 'PUT',
                     credentials: 'include',
                     headers: {
@@ -1108,8 +1109,9 @@ class Chat {
             }, 300)
         );
 
+        console.log(this.elements.formSendMessage)
         // Attach message send event
-        this.elements.formSendMessage?.addEventListener('submit', e => {
+        document.querySelector(".send-msg-btn")?.addEventListener('click', e => {
             e.preventDefault();
 
             const message = this.elements.messageInput.value.trim();
@@ -1124,6 +1126,7 @@ class Chat {
                     conteudo: message,
                     id_element: idElement
                 };
+                console.log(this.contatoAberto, "contatoAberto")
 
                 console.log(payload, "payload")
                 console.log(this.isSocketConnected, "isSocketConnected")

@@ -17,7 +17,7 @@ async function realizarLogin(){
     try {
         document.getElementById("div-carregando-fundo").style.display = "flex";
 
-        const response = await fetch(endpoint + '/api/auth/login', {
+        const response = await fetch(endpoint + '/api/oz/auth/login', {
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json',
