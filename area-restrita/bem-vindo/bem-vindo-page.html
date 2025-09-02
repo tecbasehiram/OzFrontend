@@ -1,0 +1,398 @@
+<!doctype html>
+
+<html
+  lang="en"
+  class="layout-navbar-fixed layout-menu-fixed layout-compact"
+  dir="ltr"
+  data-skin="default"
+  data-assets-path="../../assets/"
+  data-template="vertical-menu-template"
+  data-bs-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>Oz Viagens e Turismo - Área Restrita</title>
+    <meta name="description" content="" />
+
+    <link rel="icon" type="image/x-icon" href="../../assets/img/favicon/favicon.ico" />
+      
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="../../assets/vendor/fonts/iconify-icons.css?v=202508292150" />
+
+    <link rel="stylesheet" href="../../assets/vendor/libs/pickr/pickr-themes.css?v=202508292150" />
+
+    <link rel="stylesheet" href="../../assets/vendor/css/core.css?v=202508292150" />
+
+    <link rel="stylesheet" href="../../assets/css/demo.css?v=202508292150" />
+
+    <link rel="stylesheet" href="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css?v=202508292150" />
+
+    <link rel="stylesheet" href="../../assets/vendor/css/pages/page-profile.css?v=202508292150" />
+
+    <script src="../../assets/vendor/js/helpers.js?v=202508292150"></script>
+
+    <script src="../../assets/vendor/js/template-customizer.js?v=202508292150"></script>
+
+    <script src="../../assets/js/config.js?v=202508292150"></script>
+    
+    <link rel="stylesheet" href="./bem-vindo-page.css?v=202508292150" />
+
+    <link rel="stylesheet" href="../identidade-visual.css?v=202508100006" />  
+  </head>
+
+  <body style="font-family: 'FontLogo', 'Arial Narrow', Arial, sans-serif;">
+    
+    <script type="module"> 
+      import { checkAuthStatus } from '../../modulos/authGatekeeper.js';
+      import { createModals, createDivCarregandoFundo, createDivFundo } from '../../modulos/prefabs.js';
+
+      createModals();
+      createDivCarregandoFundo();
+      createDivFundo();
+
+      await checkAuthStatus("../..");
+
+    </script>
+
+    <div class="layout-wrapper layout-content-navbar conteudo-restrito">
+      <div class="layout-container">
+
+        <aside id="layout-menu" class="layout-menu menu-vertical menu">
+          <div class="app-brand demo" style="padding-inline: 0 !important; height: auto !important; margin-bottom: 9px;">
+            <!-- Brand Logo -->
+
+            <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
+              <i class="icon-base bx bx-chevron-left"></i>
+            </a>
+          </div>
+
+          <div class="menu-inner-shadow"></div>
+
+          <ul class="menu-inner py-1">
+            <!-- Sidebar itens -->
+          </ul>
+        </aside>
+        
+        <div class="menu-mobile-toggler d-xl-none rounded-1">
+          <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large text-bg-secondary p-2 rounded-1">
+            <i class="bx bx-menu icon-base"></i>
+            <i class="bx bx-chevron-right icon-base"></i>
+          </a>
+        </div>
+
+        <div class="layout-page">
+
+          <nav
+            class="layout-navbar container-xxl navbar-detached navbar navbar-expand-xl align-items-center bg-navbar-theme"
+            id="layout-navbar">
+            <div class="layout-menu-toggle navbar-nav align-items-xl-center me-4 me-xl-0 d-xl-none">
+              <a class="nav-item nav-link px-0 me-xl-6" href="javascript:void(0)">
+                <i class="icon-base bx bx-menu icon-md"></i>
+              </a>
+            </div>
+
+            <div class="navbar-nav-right d-flex align-items-center justify-content-end" id="navbar-collapse">
+              
+
+              <ul class="navbar-nav flex-row align-items-center ms-md-auto">
+                <div class="navbar-nav align-items-center">                 
+                  <div class="nav-item navbar-search-wrapper mb-0">                   
+                    <a class="nav-item nav-link search-toggler px-0" href="javascript:void(0);">                     
+                      <span class="d-inline-block text-body-secondary fw-normal" id="autocomplete"></span>                   
+                    </a>                 
+                  </div>               
+                </div>
+
+                <li class="nav-item dropdown me-2 me-xl-0">
+                  <a
+                    class="nav-link dropdown-toggle hide-arrow"
+                    id="nav-theme"
+                    href="javascript:void(0);"
+                    data-bs-toggle="dropdown">
+                    <i class="icon-base bx bx-sun icon-md theme-icon-active"></i>
+                    <span class="d-none ms-2" id="nav-theme-text">Toggle theme</span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-theme-text">
+                    <li>
+                      <button
+                        type="button"
+                        class="dropdown-item align-items-center active"
+                        data-bs-theme-value="light"
+                        aria-pressed="false">
+                        <span><i class="icon-base bx bx-sun icon-md me-3" data-icon="sun"></i>Light</span>
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        type="button"
+                        class="dropdown-item align-items-center"
+                        data-bs-theme-value="dark"
+                        aria-pressed="true">
+                        <span><i class="icon-base bx bx-moon icon-md me-3" data-icon="moon"></i>Dark</span>
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        type="button"
+                        class="dropdown-item align-items-center"
+                        data-bs-theme-value="system"
+                        aria-pressed="false">
+                        <span><i class="icon-base bx bx-desktop icon-md me-3" data-icon="desktop"></i>System</span>
+                      </button>
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                  <a
+                    class="nav-link dropdown-toggle hide-arrow p-0"
+                    href="javascript:void(0);"
+                    data-bs-toggle="dropdown">
+                    <div class="avatar avatar-online">
+                      <img src="../../images/foto-perfil-light.png" alt class="rounded-circle user-img" style="object-fit: contain;" />
+                    </div>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <div class="dropdown-item dropdown-item-foto-perfil">
+                        <div class="d-flex">
+                          <div class="flex-shrink-0 me-3">
+                            <div class="avatar avatar-online">
+                              <img src="../../images/foto-perfil-light.png" alt class="w-px-40 rounded-circle user-img" style="object-fit: contain;" />
+                            </div>
+                          </div>
+                          <div class="flex-grow-1">
+                            <h6 class="mb-0 user-name">Anônimo</h6>
+                            <small class="text-body-secondary user-rule">Cargo</small>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="dropdown-divider my-1"></div>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="../../area-restrita/perfil/perfil-page.html">
+                        <i class="icon-base bx bx-user icon-md me-3"></i><span>Meu Perfil</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="../../area-restrita/editar-perfil/editar-perfil-page.html">
+                        <i class="icon-base bx bx-cog icon-md me-3"></i><span>Editar Perfil</span>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="dropdown-divider my-1"></div>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" id="btn-logout" target="_blank">
+                        <i class="icon-base bx bx-power-off icon-md me-3"></i><span>Sair</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </nav>
+
+          <div class="content-wrapper">
+            <div class="container-xxl flex-grow-1 container-p-y">
+
+
+              <div class="row mb-4">
+                <div class="col-12">
+                  <div class="card">
+                    <div class="card-body text-center">
+                      <h3 class="text-primary mb-3 d-flex justify-content-center align-items-center">
+                        <i class="bx bx-home-heart me-2"></i>
+                        Bem-vindo à Área Restrita da Oz Viagens e Turismo!
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Atalhos para Funcionalidades -->
+              <div class="row">
+                <div class="col-12">
+                  <h4 class="mb-8 mt-4">
+                    <i class="bx bx-navigation text-primary me-2"></i>
+                    Acesso Rápido
+                  </h4>
+                </div>
+              </div>
+
+              <div class="row">
+                <!-- Chat -->
+                <div class="col-xl-3 col-md-6 mb-4">
+                  <div class="card atalho-card h-100">
+                    <div class="card-body text-center">
+                      <div class="atalho-icon mb-3">
+                        <i class="bx bx-message-rounded-dots"></i>
+                      </div>
+                      <h5 class="card-title" style="color: inherit !important;">Chat</h5>
+                      <p class="card-text" style="color: inherit !important;">Converse com seus clientes em tempo real</p>
+                      <a class="btn btn-primary btn-sm text-white" href="../../area-restrita/chat/chat-page.html">
+                        <i class="bx bx-right-arrow-alt me-1"></i>
+                        Acessar Chat
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+              
+<!-- 
+                <div class="col-xl-3 col-md-6 mb-4">
+                  <div class="card atalho-card h-100">
+                    <div class="card-body text-center">
+                      <div class="atalho-icon mb-3">
+                        <i class="bx bx-file-doc"></i>
+                      </div>
+                      <h5 class="card-title">Documentos</h5>
+                      <p class="card-text">Acesse formulários, petições e documentos importantes</p>
+                      <button class="btn btn-primary btn-sm">
+                        <i class="bx bx-right-arrow-alt me-1"></i>
+                        Ver Documentos
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xl-3 col-md-6 mb-4">
+                  <div class="card atalho-card h-100">
+                    <div class="card-body text-center">
+                      <div class="atalho-icon mb-3">
+                        <i class="bx bx-news"></i>
+                      </div>
+                      <h5 class="card-title">Notícias</h5>
+                      <p class="card-text">Fique por dentro das últimas notícias e atualizações do mundo jurídico</p>
+                      <button class="btn btn-primary btn-sm">
+                        <i class="bx bx-right-arrow-alt me-1"></i>
+                        Ler Notícias
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xl-3 col-md-6 mb-4">
+                  <div class="card atalho-card h-100">
+                    <div class="card-body text-center">
+                      <div class="atalho-icon mb-3">
+                        <i class="bx bx-graduation"></i>
+                      </div>
+                      <h5 class="card-title">Cursos</h5>
+                      <p class="card-text">Participe de cursos, palestras e eventos de capacitação</p>
+                      <button class="btn btn-primary btn-sm">
+                        <i class="bx bx-right-arrow-alt me-1"></i>
+                        Ver Cursos
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xl-3 col-md-6 mb-4">
+                  <div class="card atalho-card h-100">
+                    <div class="card-body text-center">
+                      <div class="atalho-icon mb-3">
+                        <i class="bx bx-library"></i>
+                      </div>
+                      <h5 class="card-title">Biblioteca</h5>
+                      <p class="card-text">Consulte códigos, leis e jurisprudências atualizadas</p>
+                      <button class="btn btn-primary btn-sm">
+                        <i class="bx bx-right-arrow-alt me-1"></i>
+                        Acessar Biblioteca
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xl-3 col-md-6 mb-4">
+                  <div class="card atalho-card h-100">
+                    <div class="card-body text-center">
+                      <div class="atalho-icon mb-3">
+                        <i class="bx bx-phone"></i>
+                      </div>
+                      <h5 class="card-title">Contatos</h5>
+                      <p class="card-text">Encontre contatos de outros advogados e da diretoria</p>
+                      <button class="btn btn-primary btn-sm">
+                        <i class="bx bx-right-arrow-alt me-1"></i>
+                        Ver Contatos
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xl-3 col-md-6 mb-4">
+                  <div class="card atalho-card h-100">
+                    <div class="card-body text-center">
+                      <div class="atalho-icon mb-3">
+                        <i class="bx bx-cog"></i>
+                      </div>
+                      <h5 class="card-title">Configurações</h5>
+                      <p class="card-text">Personalize suas preferências e configurações da conta</p>
+                      <button class="btn btn-primary btn-sm">
+                        <i class="bx bx-right-arrow-alt me-1"></i>
+                        Configurar
+                      </button>
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+
+              <!-- Mensagem de Boas-vindas -->
+              
+            </div>
+
+            <footer class="content-footer footer bg-footer-theme">
+              <!-- Footer content -->
+            </footer>
+
+            <div class="content-backdrop fade"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="layout-overlay layout-menu-toggle"></div>
+
+      <div class="drag-target"></div>
+    </div>
+
+    <script src="../../assets/vendor/libs/jquery/jquery.js?v=202508292150"></script>
+
+    <script src="../../assets/vendor/libs/popper/popper.js?v=202508292150"></script>
+    <script src="../../assets/vendor/js/bootstrap.js?v=202508292150"></script>
+    <script src="../../assets/vendor/libs/@algolia/autocomplete-js.js?v=202508292150"></script>
+
+    <script src="../../assets/vendor/libs/pickr/pickr.js?v=202508292150"></script>
+
+    <script src="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js?v=202508292150"></script>
+
+    <script src="../../assets/vendor/libs/hammer/hammer.js?v=202508292150"></script>
+
+    <script src="../../assets/vendor/libs/i18n/i18n.js?v=202508292150"></script>
+
+    <script src="../../assets/vendor/js/menu.js?v=202508292150"></script>
+    
+    <script src="../../assets/js/main.js?v=202508292150"></script>
+    <script src="../../assets/js/app-user-view-account.js?v=202508292150"></script>    
+    <script type="module" src="./bem-vindo-page.js?v=202508292150"></script>
+
+    <script type="module"> 
+      import { createSidebar, createFooterAreaLogada } from '../../modulos/prefabs.js';
+      
+      createSidebar("../..", "bem-vindo");
+      createFooterAreaLogada("../.."); 
+    </script>
+
+    <script src="../../assets/js/main.js?v=202508292150"></script>
+  </body>
+</html>

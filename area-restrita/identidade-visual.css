@@ -1,0 +1,18 @@
+:root {
+    --oz-black: #295e4e;
+    --oz-dark: #295e4e;
+    --oz-white: #ffffff;
+    --oz-gray: #6b7280;
+    --oz-border: #e5e7eb;
+    --oz-accent: #295e4e; /* CTA laranja */
+  }
+  
+  /* Bootstrap theme overrides */
+:root {
+    --bs-primary: #295e4e;
+    --bs-primary-rgb: 41, 94, 78;
+    --bs-secondary: #e3cb6f;
+    --bs-secondary-rgb: 227, 203, 111;
+    --bs-link-color: #295e4e;
+    --bs-link-hover-color: #1f4a3e;
+}

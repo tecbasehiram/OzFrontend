@@ -1,0 +1,379 @@
+@font-face {
+    font-family: 'FontLogo';
+    src: url('../../fonts/gotham-htf-medium.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Estilos para o card de aniversariantes */
+.aniversariantes-card {
+    border: none;
+    overflow: hidden;
+}
+
+.aniversariantes-card .card-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 1.5rem;
+}
+
+.aniversariantes-card .card-title {
+    color: white;
+    font-weight: 600;
+}
+
+/* Aniversariante de hoje - destaque especial */
+.aniversariante-hoje {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    border-radius: 5px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid #ff6b6b;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 107, 107, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 107, 107, 0);
+    }
+}
+
+.avatar-aniversariante-hoje {
+    position: relative;
+    display: inline-block;
+}
+
+.avatar-aniversariante-hoje img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.coroa-aniversario {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #ffd700;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Container de confetes */
+.confete-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.confete {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #ff6b6b;
+    animation: confete-fall 3s linear infinite;
+}
+
+.confete:nth-child(2n) {
+    background: #4ecdc4;
+    animation-delay: 0.5s;
+}
+
+.confete:nth-child(3n) {
+    background: #45b7d1;
+    animation-delay: 1s;
+}
+
+.confete:nth-child(4n) {
+    background: #96ceb4;
+    animation-delay: 1.5s;
+}
+
+.confete:nth-child(5n) {
+    background: #feca57;
+    animation-delay: 2s;
+}
+
+@keyframes confete-fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Lista de aniversariantes da semana */
+.aniversariantes-semana {
+    background: #f8f9fa;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+}
+
+/* Container scrollável horizontal */
+.aniversariantes-scroll-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding: 0.5rem 0;
+    scrollbar-width: thin;
+    scrollbar-color: #667eea var(--bs-body-bg);
+}
+
+.aniversariantes-scroll-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.aniversariantes-scroll-container::-webkit-scrollbar-track {
+    border-radius: 4px;
+}
+
+.aniversariantes-scroll-container::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 4px;
+}
+
+.aniversariantes-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #5a6fd8;
+}
+
+.aniversariantes-lista {
+    display: flex;
+    gap: 1rem;
+    padding: 0.5rem 0;
+}
+
+.aniversariante-item {
+    background: white;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #e9ecef;
+    min-width: 200px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.aniversariante-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.aniversariante-item .aniversariante-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.aniversariante-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.aniversariante-item .aniversariante-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.aniversariante-item h6 {
+    margin: 0 0 0.25rem 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #495057;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.aniversariante-item .data-aniversario {
+    font-size: 0.8rem;
+    color: #6c757d;
+    margin: 0;
+}
+
+.aniversariante-item .dia-semana {
+    font-size: 0.75rem;
+    color: #adb5bd;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Indicador de scroll */
+.scroll-indicator {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(90deg, transparent, #f8f9fa);
+    width: 30px;
+    height: 100%;
+    pointer-events: none;
+    display: none;
+}
+
+.aniversariantes-scroll-container:hover + .scroll-indicator {
+    display: block;
+}
+
+/* Estilos para os atalhos */
+.atalho-card {
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.atalho-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.atalho-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #e3cb6f, #c9af5f);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.atalho-card:hover::before {
+    transform: scaleX(1);
+}
+
+.atalho-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #e3cb6f 0%, #c9af5f 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.atalho-card:hover .atalho-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.atalho-card .card-title {
+    color: #495057;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.atalho-card .card-text {
+    color: #6c757d;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.atalho-card .btn {
+    border-radius: 2rem;
+    padding: 0.5rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.atalho-card .btn:hover {
+    transform: translateX(5px);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .aniversariante-hoje {
+        padding: 1rem;
+    }
+    
+    .avatar-aniversariante-hoje img {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .atalho-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .atalho-card .card-body {
+        padding: 1rem;
+    }
+}
+
+/* Animações adicionais */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.aniversariantes-card,
+.atalho-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.atalho-card:nth-child(1) { animation-delay: 0.1s; }
+.atalho-card:nth-child(2) { animation-delay: 0.2s; }
+.atalho-card:nth-child(3) { animation-delay: 0.3s; }
+.atalho-card:nth-child(4) { animation-delay: 0.4s; }
+.atalho-card:nth-child(5) { animation-delay: 0.5s; }
+.atalho-card:nth-child(6) { animation-delay: 0.6s; }
+.atalho-card:nth-child(7) { animation-delay: 0.7s; }
+.atalho-card:nth-child(8) { animation-delay: 0.8s; }
+
+@media (max-width: 493px) {
+    .logo-casa-digital {
+        height: 150px !important;
+    }
+}
