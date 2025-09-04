@@ -426,81 +426,14 @@
                   <div class="card h-100">
                     <div class="card-header d-flex justify-content-between">
                       <div class="card-title mb-0">
-                        <h5 class="mb-1 me-2">Earning Reports</h5>
-                        <p class="card-subtitle">Weekly Earnings Overview</p>
-                      </div>
-                      <div class="dropdown">
-                        <button
-                          class="btn text-body-secondary p-0"
-                          type="button"
-                          id="earningReports"
-                          data-bs-toggle="dropdown"
-                          aria-haspopup="true"
-                          aria-expanded="false">
-                          <i class="icon-base bx bx-dots-vertical-rounded icon-lg"></i>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="earningReports">
-                          <a class="dropdown-item" href="javascript:void(0);">Select All</a>
-                          <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
-                          <a class="dropdown-item" href="javascript:void(0);">Share</a>
-                        </div>
+                        <h5 class="mb-1 me-2">Taxa de Fornecedores</h5>
+                        <p class="card-subtitle">Visão Geral de Taxa de Fornecedores</p>
                       </div>
                     </div>
                     <div class="card-body pb-0">
-                      <ul class="p-0 m-0">
-                        <li class="d-flex mb-6 pb-1">
-                          <div class="avatar flex-shrink-0 me-3">
-                            <span class="avatar-initial rounded bg-label-primary"
-                              ><i class="icon-base bx bx-trending-up"></i
-                            ></span>
-                          </div>
-                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                            <div class="me-2">
-                              <h6 class="mb-0">Net Profit</h6>
-                              <small class="text-body-secondary">12.4k Sales</small>
-                            </div>
-                            <div class="user-progress">
-                              <span class="me-3">$1,619</span
-                              ><i class="icon-base bx bx-chevron-up text-success ms-1"></i> <span>18.6%</span>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="d-flex mb-6 pb-1">
-                          <div class="avatar flex-shrink-0 me-3">
-                            <span class="avatar-initial rounded bg-label-success"
-                              ><i class="icon-base bx bx-dollar"></i
-                            ></span>
-                          </div>
-                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                            <div class="me-2">
-                              <h6 class="mb-0">Total Income</h6>
-                              <small class="text-body-secondary">Sales, Affiliation</small>
-                            </div>
-                            <div class="user-progress">
-                              <span class="me-3">$3,571</span
-                              ><i class="icon-base bx bx-chevron-up text-success ms-1"></i> <span>39.6%</span>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="d-flex mb-6 pb-1">
-                          <div class="avatar flex-shrink-0 me-3">
-                            <span class="avatar-initial rounded bg-label-secondary"
-                              ><i class="icon-base bx bx-credit-card"></i
-                            ></span>
-                          </div>
-                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                            <div class="me-2">
-                              <h6 class="mb-0">Total Expenses</h6>
-                              <small class="text-body-secondary">ADVT, Marketing</small>
-                            </div>
-                            <div class="user-progress">
-                              <span class="me-3">$430</span
-                              ><i class="icon-base bx bx-chevron-up text-success ms-1"></i> <span>52.8%</span>
-                            </div>
-                          </div>
-                        </li>
+                      <ul class="p-0 m-0 ul-lista" id="taxaFornecedoresLista">
+                        <div class="loading-data"></div>
                       </ul>
-                      <div id="reportBarChart"></div>
                     </div>
                   </div>
                 </div>
@@ -589,7 +522,7 @@
                       </div>
                     </div>
                     <div id="salesStats">
-                      <div class="loading-data"></div>
+                      <div class="loading-data" style="margin-inline: 5%;"></div>
                     </div>
                     <div class="card-body">
                       <div class="d-flex justify-content-center align-items-center gap-4">

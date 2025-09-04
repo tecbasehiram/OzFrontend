@@ -2,7 +2,26 @@ import { endpoint } from '../../modulos/variaveisGlobais.js';
 import { customAlert, customConfirm } from '../../modulos/modals.js';
 import { fetchComAutoRefresh } from '../../modulos/fetchComAutoRefresh.js';
 
-let topVendasFaturamento, topVendasQuantidade, topEstadosVendas, topClientes, topVendedores, mapTipos = {}, totalAno = {}, statusVendas;
+let topVendasFaturamento, topVendasQuantidade, topEstadosVendas, topClientes, topVendedores, mapTipos = {}, totalAno = {}, statusVendas, taxaFornecedores;
+
+async function getTaxaFornecedores() {
+    const response = await fetchComAutoRefresh(endpoint + '/api/oz/vendas/getTaxaFornecedores', {
+        credentials: 'include',
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+        taxaFornecedores = data.payload;
+        exibirTaxaFornecedores(taxaFornecedores);
+    } else {
+        customAlert(data.message);
+    }
+}
 
 async function getTopVendasFaturamento() {
     const response = await fetchComAutoRefresh(endpoint + '/api/oz/vendas/getTopVendasFaturamento', {
@@ -191,6 +210,31 @@ function handleTopVendasQuantidade() {
     });
     document.getElementById('topProdutosQuantidadeUltimoAno').addEventListener('click', () => {
         exibirTopVendasQuantidade(topVendasQuantidade.vendasQuantidadeDozeMeses);
+    });
+}
+
+function exibirTaxaFornecedores(taxaFornecedores) {
+    document.getElementById('taxaFornecedoresLista').innerHTML = '';
+
+    if(taxaFornecedores.length === 0) {
+        document.getElementById('taxaFornecedoresLista').innerHTML = 'Dados não encontrados';
+
+        return;
+    }
+
+    taxaFornecedores.forEach(item => {
+        document.getElementById('taxaFornecedoresLista').innerHTML += `
+            <li class="d-flex mb-6 pb-1">
+                <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                    <div class="me-2">
+                        <h6 class="mb-0">${item.fornecedor}</h6>
+                        <small class="text-body-secondary">${item.produto}</small>
+                    </div>
+                    <div class="user-progress">
+                        <span class="me-3">${parseFloat(item.percentual_comissao).toFixed(2)}%</span
+                    </div>
+                </div>
+            </li> `;
     });
 }
 
@@ -655,4 +699,5 @@ document.addEventListener('DOMContentLoaded', () => {
     getVendasStatus();
     handleAnalisisVendas();
     handleStatusVendas();
+    getTaxaFornecedores();
 });
