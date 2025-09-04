@@ -1,0 +1,757 @@
+<!doctype html>
+
+<html
+  lang="en"
+  class="layout-navbar-fixed layout-menu-fixed layout-compact"
+  dir="ltr"
+  data-skin="default"
+  data-assets-path="../../assets/"
+  data-template="vertical-menu-template"
+  data-bs-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <title>Oz Viagens e Turismo - Área Restrita</title>
+
+    <meta name="description" content="" />
+
+    <link rel="icon" type="image/x-icon" href="../../assets/img/favicon/favicon.ico" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet" />
+
+    <link rel="stylesheet" href="../../assets/vendor/fonts/iconify-icons.css" />
+      
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="../../assets/vendor/libs/pickr/pickr-themes.css" />
+
+    <link rel="stylesheet" href="../../assets/vendor/css/core.css" />
+
+    <link rel="stylesheet" href="../../assets/css/demo.css" />
+
+    <link rel="stylesheet" href="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+
+    <link rel="stylesheet" href="../../assets/vendor/fonts/flag-icons.css" />
+
+    <link rel="stylesheet" href="../../assets/vendor/libs/apex-charts/apex-charts.css" />
+    
+    <script src="../../assets/vendor/js/helpers.js"></script>
+    
+    <script src="../../assets/vendor/js/template-customizer.js"></script>
+
+    <script src="../../assets/js/config.js"></script>
+    
+    <link rel="stylesheet" href="./crm-dashboard-page.css?v=202508292150" />
+
+    <link rel="stylesheet" href="../identidade-visual.css?v=202508100006" />  
+  </head>
+
+  <body style="font-family: 'FontLogo', 'Arial Narrow', Arial, sans-serif;">
+    
+    <script type="module"> 
+      import { checkAuthStatus } from '../../modulos/authGatekeeper.js';
+      import { createModals, createDivCarregandoFundo, createDivFundo } from '../../modulos/prefabs.js';
+
+      createModals();
+      createDivCarregandoFundo();
+      createDivFundo();
+
+      await checkAuthStatus("../..");
+
+    </script>
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-content-navbar conteudo-restrito">
+      <div class="layout-container">
+        <!-- Menu -->
+
+        <aside id="layout-menu" class="layout-menu menu-vertical menu">
+            <div class="app-brand demo" style="padding-inline: 0 !important; height: auto !important; margin-bottom: 9px;">
+              <!-- Brand Logo -->
+  
+              <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
+                <i class="icon-base bx bx-chevron-left"></i>
+              </a>
+            </div>
+  
+            <div class="menu-inner-shadow"></div>
+  
+            <ul class="menu-inner py-1">
+              <!-- Sidebar itens -->
+            </ul>
+          </aside>
+
+        <div class="menu-mobile-toggler d-xl-none rounded-1">
+          <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large text-bg-secondary p-2 rounded-1">
+            <i class="bx bx-menu icon-base"></i>
+            <i class="bx bx-chevron-right icon-base"></i>
+          </a>
+        </div>
+        <!-- / Menu -->
+
+        <!-- Layout container -->
+        <div class="layout-page">
+          <!-- Navbar -->
+
+          <nav
+            class="layout-navbar container-xxl navbar-detached navbar navbar-expand-xl align-items-center bg-navbar-theme"
+            id="layout-navbar">
+            <div class="layout-menu-toggle navbar-nav align-items-xl-center me-4 me-xl-0 d-xl-none">
+              <a class="nav-item nav-link px-0 me-xl-6" href="javascript:void(0)">
+                <i class="icon-base bx bx-menu icon-md"></i>
+              </a>
+            </div>
+
+            <div class="navbar-nav-right d-flex align-items-center justify-content-end" id="navbar-collapse">
+              
+
+
+            <ul class="navbar-nav flex-row align-items-center ms-md-auto">
+                <div class="navbar-nav align-items-center">                 
+                    <div class="nav-item navbar-search-wrapper mb-0">                   
+                        <a class="nav-item nav-link search-toggler px-0" href="javascript:void(0);">                     
+                            <span class="d-inline-block text-body-secondary fw-normal" id="autocomplete"></span>                   
+                        </a>                 
+                    </div>               
+                </div>
+                <li class="nav-item dropdown me-2 me-xl-0">
+                  <a
+                    class="nav-link dropdown-toggle hide-arrow"
+                    id="nav-theme"
+                    href="javascript:void(0);"
+                    data-bs-toggle="dropdown">
+                    <i class="icon-base bx bx-sun icon-md theme-icon-active"></i>
+                    <span class="d-none ms-2" id="nav-theme-text">Toggle theme</span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-theme-text">
+                    <li>
+                      <button
+                        type="button"
+                        class="dropdown-item align-items-center active"
+                        data-bs-theme-value="light"
+                        aria-pressed="false">
+                        <span><i class="icon-base bx bx-sun icon-md me-3" data-icon="sun"></i>Light</span>
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        type="button"
+                        class="dropdown-item align-items-center"
+                        data-bs-theme-value="dark"
+                        aria-pressed="true">
+                        <span><i class="icon-base bx bx-moon icon-md me-3" data-icon="moon"></i>Dark</span>
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        type="button"
+                        class="dropdown-item align-items-center"
+                        data-bs-theme-value="system"
+                        aria-pressed="false">
+                        <span><i class="icon-base bx bx-desktop icon-md me-3" data-icon="desktop"></i>System</span>
+                      </button>
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                  <a
+                    class="nav-link dropdown-toggle hide-arrow p-0"
+                    href="javascript:void(0);"
+                    data-bs-toggle="dropdown">
+                    <div class="avatar avatar-online">
+                      <img src="../../assets/images/foto-perfil-light.png" alt class="rounded-circle user-img" style="object-fit: contain;" />
+                    </div>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <div class="dropdown-item dropdown-item-foto-perfil">
+                        <div class="d-flex">
+                          <div class="flex-shrink-0 me-3">
+                            <div class="avatar avatar-online">
+                              <img src="../../assets/images/foto-perfil-light.png" alt class="w-px-40 rounded-circle user-img" style="object-fit: contain;" />
+                            </div>
+                          </div>
+                          <div class="flex-grow-1">
+                            <h6 class="mb-0 user-name">Anônimo</h6>
+                            <small class="text-body-secondary user-rule">Cargo</small>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="dropdown-divider my-1"></div>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="../../area-restrita/perfil/perfil-page.html">
+                        <i class="icon-base bx bx-user icon-md me-3"></i><span>Meu Perfil</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="../../area-restrita/editar-perfil/editar-perfil-page.html">
+                        <i class="icon-base bx bx-cog icon-md me-3"></i><span>Editar Perfil</span>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="dropdown-divider my-1"></div>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" id="btn-logout" target="_blank">
+                        <i class="icon-base bx bx-power-off icon-md me-3"></i><span>Sair</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </nav>
+
+          <!-- / Navbar -->
+
+          <!-- Content wrapper -->
+          <div class="content-wrapper">
+            <!-- Content -->
+            <div class="container-xxl flex-grow-1 container-p-y">
+              <div class="row">
+                <!-- Customer Ratings -->
+                <div class="col-md-6 col-xxl-4 mb-6">
+                  <div class="card h-100">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                      <h5 class="card-title m-0 me-2">Avaliações de Clientes</h5>
+                      <div class="dropdown">
+                        <button
+                          class="btn p-0"
+                          type="button"
+                          id="customerRatings"
+                          data-bs-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false">
+                          <i class="icon-base bx bx-dots-vertical-rounded icon-lg text-body-secondary"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="customerRatings">
+                          <a class="dropdown-item" href="javascript:void(0);">Todas Avaliações</a>
+                          <a class="dropdown-item" href="javascript:void(0);">Avaliações por Cliente</a>
+                          <a class="dropdown-item" href="javascript:void(0);">Avaliações por Produto</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body pb-0">
+                      <div class="d-flex align-items-center gap-2 mb-1">
+                        <h2 class="mb-0">4.0</h2>
+                        <div class="ratings">
+                          <i class="icon-base bx bxs-star icon-lg text-warning"></i>
+                          <i class="icon-base bx bxs-star icon-lg text-warning"></i>
+                          <i class="icon-base bx bxs-star icon-lg text-warning"></i>
+                          <i class="icon-base bx bxs-star icon-lg text-warning"></i>
+                          <i class="icon-base bx bxs-star icon-lg text-lighter"></i>
+                        </div>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span class="badge bg-label-primary me-2">+5.0</span>
+                        <span>Pontos do último mês</span>
+                      </div>
+                    </div>
+                    <div id="customerRatingsChart"></div>
+                  </div>
+                </div>
+                <!--/ Customer Ratings -->
+                <!-- Overview & Sales Activity -->
+                <div class="col-md-6 col-xxl-4 mb-6">
+                  <div class="card h-100 gap-12">
+                    <div class="card-header d-flex justify-content-between">
+                      <div class="card-title me-2">
+                        <h5 class="mb-1">Visão Geral e Atividade de Vendas</h5>
+                        <p class="card-subtitle">Confira cada coluna para mais detalhes</p>
+                      </div>
+                      <div class="dropdown">
+                        <button
+                          class="btn p-0"
+                          type="button"
+                          id="salesActivity"
+                          data-bs-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false">
+                          <i class="icon-base bx bx-dots-vertical-rounded icon-lg text-body-secondary"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="salesActivity">
+                          <a class="dropdown-item" href="javascript:void(0);">Último Mês</a>
+                          <a class="dropdown-item" href="javascript:void(0);">Últimos 6 Mês</a>
+                          <a class="dropdown-item" href="javascript:void(0);">Último Ano</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body px-1 pb-0">
+                      <div id="salesActivityChart"></div>
+                    </div>
+                  </div>
+                </div>
+                <!--/ Overview & Sales Activity -->
+                <div class="col-12 col-md-12 col-xxl-4">
+                  <div class="row">
+                    <div class="col-6 col-md-3 col-xxl-6 mb-6">
+                      <div class="card h-100">
+                        <div class="card-body pb-4">
+                          <span class="d-block fw-medium mb-1">Atendimentos</span>
+                          <h4 class="card-title mb-0">284</h4>
+                        </div>
+                        <div id="sessionsChart" class="mb-0"></div>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-3 col-xxl-6 mb-6">
+                      <div class="card h-100">
+                        <div class="card-body">
+                          <div class="card-title d-flex align-items-start justify-content-between mb-4">
+                            <div class="avatar flex-shrink-0">
+                              <img src="../../assets/img/icons/unicons/cube-secondary.png" alt="cube" class="rounded" />
+                            </div>
+                          </div>
+                          <p class="mb-1">Pedidos</p>
+                          <h4 class="card-title mb-3">286</h4>
+                          <small class="text-danger fw-medium"
+                            ><i class="icon-base bx bx-down-arrow-alt"></i> -13.24%</small
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xxl-12 mb-6">
+                      <div class="card h-100">
+                        <div class="card-body">
+                          <div class="d-flex justify-content-between">
+                            <div class="d-flex flex-column">
+                              <div class="card-title mb-auto">
+                                <h5 class="mb-0">Generated Leads</h5>
+                                <p class="mb-0">Monthly Report</p>
+                              </div>
+                              <div class="chart-statistics">
+                                <h4 class="card-title mb-0">4,230</h4>
+                                <p class="text-success text-nowrap mb-0">
+                                  <i class="icon-base bx bx-chevron-up icon-lg"></i> +12.8%
+                                </p>
+                              </div>
+                            </div>
+                            <div id="leadsReportChart"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <!-- Top Products by -->
+                <div class="col-12 col-xxl-8 mb-6">
+                  <div class="card h-100">
+                    <div class="row row-bordered g-0 h-100">
+                      <div class="col-md-6" >
+                        <div class="card-header d-flex align-items-center justify-content-between">
+                          <h5 class="card-title m-0 me-2">Top Produtos por <span class="text-primary">Faturamento</span></h5>
+                          <div class="dropdown">
+                            <button
+                              class="btn p-0"
+                              type="button"
+                              id="topSales"
+                              data-bs-toggle="dropdown"
+                              aria-haspopup="true"
+                              aria-expanded="false">
+                              <i class="icon-base bx bx-dots-vertical-rounded icon-lg text-body-secondary"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="topSales">
+                              <a class="dropdown-item cursor-pointer" id="topProdutosFaturamentoUltimoMes">Último Mês</a>
+                              <a class="dropdown-item cursor-pointer" id="topProdutosFaturamentoUltimos6Meses">Últimos 6 Mês</a>
+                              <a class="dropdown-item cursor-pointer" id="topProdutosFaturamentoUltimoAno">Último Ano</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card-body pt-6">
+                          <ul class="p-0 m-0 ul-lista" id="topProdutosFaturamento">
+                            <li class="mb-2">
+                              <div class="loading-data"></div>
+                            </li>
+                            <li class="mb-2">
+                              <div class="loading-data"></div>
+                            </li>
+                            <li class="mb-2">
+                              <div class="loading-data"></div>
+                            </li>                            
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-md-6" >
+                        <div class="card-header d-flex align-items-center justify-content-between">
+                          <h5 class="card-title m-0 me-2">Top Produtos por <span class="text-primary">Quantidade</span></h5>
+                          <div class="dropdown">
+                            <button
+                              class="btn p-0"
+                              type="button"
+                              id="topSales"
+                              data-bs-toggle="dropdown"
+                              aria-haspopup="true"
+                              aria-expanded="false">
+                              <i class="icon-base bx bx-dots-vertical-rounded icon-lg text-body-secondary"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="topSales">
+                              <a class="dropdown-item cursor-pointer" id="topProdutosQuantidadeUltimoMes">Último Mês</a>
+                              <a class="dropdown-item cursor-pointer" id="topProdutosQuantidadeUltimos6Meses">Últimos 6 Mês</a>
+                              <a class="dropdown-item cursor-pointer" id="topProdutosQuantidadeUltimoAno">Último Ano</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card-body pt-6">
+                          <ul class="p-0 m-0 ul-lista" id="topProdutosQuantidade">
+                            <li class="mb-2">
+                              <div class="loading-data"></div>
+                            </li>
+                            <li class="mb-2">
+                              <div class="loading-data"></div>
+                            </li>
+                            <li class="mb-2">
+                              <div class="loading-data"></div>
+                            </li>                            
+                          </ul>
+                        </div>
+                      </div>  
+                    </div>
+                  </div>
+                </div>
+                <!-- Top Products by -->
+
+                <!-- Earning Reports -->
+                <div class="col-md-6 col-xxl-4 mb-6">
+                  <div class="card h-100">
+                    <div class="card-header d-flex justify-content-between">
+                      <div class="card-title mb-0">
+                        <h5 class="mb-1 me-2">Earning Reports</h5>
+                        <p class="card-subtitle">Weekly Earnings Overview</p>
+                      </div>
+                      <div class="dropdown">
+                        <button
+                          class="btn text-body-secondary p-0"
+                          type="button"
+                          id="earningReports"
+                          data-bs-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false">
+                          <i class="icon-base bx bx-dots-vertical-rounded icon-lg"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="earningReports">
+                          <a class="dropdown-item" href="javascript:void(0);">Select All</a>
+                          <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
+                          <a class="dropdown-item" href="javascript:void(0);">Share</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body pb-0">
+                      <ul class="p-0 m-0">
+                        <li class="d-flex mb-6 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <span class="avatar-initial rounded bg-label-primary"
+                              ><i class="icon-base bx bx-trending-up"></i
+                            ></span>
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <h6 class="mb-0">Net Profit</h6>
+                              <small class="text-body-secondary">12.4k Sales</small>
+                            </div>
+                            <div class="user-progress">
+                              <span class="me-3">$1,619</span
+                              ><i class="icon-base bx bx-chevron-up text-success ms-1"></i> <span>18.6%</span>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex mb-6 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <span class="avatar-initial rounded bg-label-success"
+                              ><i class="icon-base bx bx-dollar"></i
+                            ></span>
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <h6 class="mb-0">Total Income</h6>
+                              <small class="text-body-secondary">Sales, Affiliation</small>
+                            </div>
+                            <div class="user-progress">
+                              <span class="me-3">$3,571</span
+                              ><i class="icon-base bx bx-chevron-up text-success ms-1"></i> <span>39.6%</span>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="d-flex mb-6 pb-1">
+                          <div class="avatar flex-shrink-0 me-3">
+                            <span class="avatar-initial rounded bg-label-secondary"
+                              ><i class="icon-base bx bx-credit-card"></i
+                            ></span>
+                          </div>
+                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <div class="me-2">
+                              <h6 class="mb-0">Total Expenses</h6>
+                              <small class="text-body-secondary">ADVT, Marketing</small>
+                            </div>
+                            <div class="user-progress">
+                              <span class="me-3">$430</span
+                              ><i class="icon-base bx bx-chevron-up text-success ms-1"></i> <span>52.8%</span>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                      <div id="reportBarChart"></div>
+                    </div>
+                  </div>
+                </div>
+                <!--/ Earning Reports -->
+
+                <!-- Sales Analytics -->
+                <div class="col-md-6 col-xxl-4 mb-6">
+                  <div class="card h-100">
+                    <div class="card-header d-flex align-items-start justify-content-between">
+                      <div>
+                        <h5 class="card-title m-0 me-2 mb-2">Análise de Vendas por Tipo</h5>
+                        <span class="badge bg-label-success me-1" id="salesAnalyticsComparacaoAnoPassado">+42.6%</span> <span id="salesAnalyticsComparacaoAnoPassadoText">Do que 2024</span>
+                      </div>
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-label-primary" id="salesAnalyticsChartAno">2025</button>
+                        <button
+                          type="button"
+                          class="btn btn-sm btn-label-primary dropdown-toggle dropdown-toggle-split"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false">
+                          <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" id="salesAnalyticsChartAno2025">2025</a></li>
+                          <li><a class="dropdown-item" id="salesAnalyticsChartAno2024">2024</a></li>
+                          <li><a class="dropdown-item" id="salesAnalyticsChartAno2023">2023</a></li>
+                          <li><a class="dropdown-item" id="salesAnalyticsChartAno2022">2022</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="card-body pb-0">
+                      <div id="salesAnalyticsChart"> 
+                        <div class="loading-data"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--/ Sales Analytics -->
+
+                <!-- Sales By Country -->
+                <div class="col-md-6 col-xxl-4 mb-6">
+                  <div class="card h-100">
+                    <div class="card-header d-flex justify-content-between">
+                      <div class="card-title mb-0">
+                        <h5 class="mb-1 me-2">Vendas por Estados</h5>
+                        <p class="card-subtitle">Visão Geral de Vendas por Estados</p>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <ul class="p-0 m-0 ul-lista" id="topEstadosVendas">
+                        <li class="mb-2">
+                          <div class="loading-data"></div>
+                        </li>
+                        <li class="mb-2">
+                          <div class="loading-data"></div>
+                        </li>
+                        <li class="mb-2">
+                          <div class="loading-data"></div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <!--/ Sales By Country -->
+
+                <!-- Sales Stats -->
+                <div class="col-md-6 col-xxl-4 mb-6">
+                  <div class="card h-100">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                      <h5 class="card-title m-0 me-2">Status de Vendas</h5>
+                      <div class="dropdown">
+                        <button
+                          class="btn p-0"
+                          type="button"
+                          id="salesStatsID"
+                          data-bs-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false">
+                          <i class="icon-base bx bx-dots-vertical-rounded icon-lg text-body-secondary"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="salesStatsID">
+                          <a class="dropdown-item" id="salesStatsUltimos3Meses">Últimos 3 Meses</a>
+                          <a class="dropdown-item" id="salesStatsUltimos6Meses">Últimos 6 Meses</a>
+                          <a class="dropdown-item" id="salesStatsUltimoAno">Último Ano</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="salesStats">
+                      <div class="loading-data"></div>
+                    </div>
+                    <div class="card-body">
+                      <div class="d-flex justify-content-center align-items-center gap-4">
+                        <div class="d-flex align-items-center">
+                          <span class="badge badge-dot bg-success me-2"></span> Vendas Concluídas
+                        </div>
+                        <div class="d-flex align-items-center">
+                          <span class="badge badge-dot bg-label-secondary me-2"></span> Vendas Canceladas
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--/ Sales Stats -->
+
+                <!-- Team Members -->
+                <div class="col-xxl-12 mb-xxl-6 mb-6">
+                  <div class="card h-100">
+                    <div class="card-header d-flex justify-content-between">
+                      <div class="card-title me-2">
+                        <h5 class="mb-1">Top Vendedores</h5>
+                        <p class="card-subtitle">Confira o top vendedores por valor total de vendas</p>
+                      </div>
+                    </div>
+                    <div class="card-datatable table-responsive">
+                      <table class="invoice-list-table table table-border-top-0">
+                        <thead>
+                          <tr>
+                            <th>Vendedor</th>
+                            <th>Quantidade de Vendas</th>
+                            <th>Valor Total de Vendas</th>
+                            <th>Última Venda</th>
+                          </tr>
+                        </thead>
+                        <tbody class="ul-lista table-border-bottom-0" id="topVendedoresTableBody">
+                          <tr>
+                            <td>
+                              <div class="loading-data"></div>
+                            </td>
+                            <td>
+                              <div class="loading-data"></div>
+                            </td>
+                            <td>
+                              <div class="loading-data"></div>
+                            </td>
+                            <td>
+                              <div class="loading-data"></div>
+                            </td>
+                          </tr> 
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <!--/ Team Members -->
+
+                <!-- Customer Table -->
+                <div class="col-xxl-12 mb-0">
+                  <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                      <div class="card-title me-2">
+                        <h5 class="mb-1">Top Clientes</h5>
+                        <p class="card-subtitle">Confira o top clientes por valor total de compras</p>
+                      </div>
+                    </div>
+                    <div class="card-datatable table-responsive">
+                      <table class="invoice-list-table table table-border-top-0">
+                        <thead>
+                          <tr>
+                            <th>Cliente</th>
+                            <th>Tipo</th>
+                            <th>Quantidade de Compras</th>
+                            <th>Valor Total de Compras</th>
+                            <th>Última Compra</th>
+                          </tr>
+                        </thead>
+                        <tbody class="table-border-bottom-0 ul-lista" id="topClientesTableBody">
+                          <tr>
+                            <td>
+                              <div class="loading-data"></div>
+                            </td>
+                            <td>
+                              <div class="loading-data"></div>
+                            </td>
+                            <td>
+                              <div class="loading-data"></div>
+                            </td>
+                            <td>
+                              <div class="loading-data"></div>
+                            </td>
+                            <td>
+                              <div class="loading-data"></div>
+                            </td>
+                          </tr>                          
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <!--/ Customer Table -->
+              </div>
+            </div>
+            <!-- / Content -->
+
+            <!-- Footer -->
+            <footer class="content-footer footer bg-footer-theme">
+                <!-- Footer content -->
+            </footer>
+            <!-- / Footer -->
+
+            <div class="content-backdrop fade"></div>
+          </div>
+          <!-- Content wrapper -->
+        </div>
+        <!-- / Layout page -->
+      </div>
+
+      <!-- Overlay -->
+      <div class="layout-overlay layout-menu-toggle"></div>
+
+      <!-- Drag Target Area To SlideIn Menu On Small Screens -->
+      <div class="drag-target"></div>
+    </div>
+    <!-- / Layout wrapper -->
+
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/theme.js  -->
+
+    <script src="../../assets/vendor/libs/jquery/jquery.js"></script>
+
+    <script src="../../assets/vendor/libs/popper/popper.js"></script>
+    <script src="../../assets/vendor/js/bootstrap.js"></script>
+    <script src="../../assets/vendor/libs/@algolia/autocomplete-js.js"></script>
+
+    <script src="../../assets/vendor/libs/pickr/pickr.js"></script>
+
+    <script src="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+    <script src="../../assets/vendor/libs/hammer/hammer.js"></script>
+
+    <script src="../../assets/vendor/libs/i18n/i18n.js"></script>
+
+    <script src="../../assets/vendor/js/menu.js"></script>
+
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+    <script src="../../assets/vendor/libs/apex-charts/apexcharts.js"></script>
+    <script type="module" src="./crm-dashboard-page.js"></script>
+
+    <!-- Main JS -->
+
+    <script type="module"> 
+        import { createSidebar, createFooterAreaLogada } from '../../modulos/prefabs.js';
+        
+        createSidebar("../..", "crm-dashboard");
+        createFooterAreaLogada("../.."); 
+      </script>
+
+    <script src="../../assets/js/main.js"></script>
+
+    <!-- Page JS -->
+    <script src="../../assets/js/dashboards-crm.js"></script>
+  </body>
+</html>

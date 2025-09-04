@@ -1,0 +1,80 @@
+.ul-lista {
+    height: 100% !important;
+    max-height: 350px !important;
+    overflow-y: auto !important;
+  
+    /* Firefox */
+    scrollbar-width: thin; /* thin | auto | none */
+    scrollbar-color: var(--scroll-thumb) transparent;
+  
+    /* UX extra */
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+}
+  
+  /* WebKit (Chrome/Edge/Safari) */
+.ul-lista::-webkit-scrollbar {
+    width: 6px;                 
+}
+.ul-lista::-webkit-scrollbar-track {
+    background: transparent;    
+}
+.ul-lista::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-thumb);
+    border-radius: 999px;       
+}
+.ul-lista:hover::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-thumb-hover);
+}
+
+:root {
+    --scroll-thumb: rgba(0, 0, 0, .20);
+    --scroll-thumb-hover: rgba(0, 0, 0, .35);
+}
+
+@media (data-bs-theme: dark) {
+    :root {
+        --scroll-thumb: rgba(255, 255, 255, .25);
+        --scroll-thumb-hover: rgba(255, 255, 255, .45);
+    }
+}
+
+.loading-data {
+    background-color: #acacac;
+    padding: 10px !important;
+    border-radius: 5px !important;
+    animation: pulse-dark-gray 1s infinite;
+}
+
+@keyframes pulse-dark-gray {
+    0% {
+        background-color: #acacac; /* cinza padrão */
+    }
+    50% {
+        background-color: #707070; /* cinza mais escuro */
+    }
+    100% {
+        background-color: #acacac;
+    }
+}
+
+/* Scroll vertical no corpo da tabela (Top Clientes) */
+.invoice-list-table tbody.ul-lista {
+    display: block;
+    height: auto !important;
+    max-height: 350px !important;
+    overflow-y: auto !important;
+    width: 100%;
+}
+
+.invoice-list-table thead,
+.invoice-list-table tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    color: #43fdc5;
+}
+
+.apexcharts-text {
+    fill: #cecece !important;
+}

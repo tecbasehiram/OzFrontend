@@ -17,3 +17,10 @@
     --bs-link-hover-color: #1f4a3e;
     --bs-primary-bg-subtle: #295e4e25;
 }
+
+@font-face {
+  font-family: 'FontLogo';
+  src: url('../../fonts/gotham-htf-medium.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}

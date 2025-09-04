@@ -522,26 +522,9 @@ function gerarJsonSidebar() {
         "url": "/area-restrita/chat/chat-page.html"
       },
       {
-        "name": "Calendário Geral",
-        "icon": "bx-calendar",
-        "url": "/area-restrita/calendario-geral/calendario-geral-page.html"
-      }
-    ],
-    "Principais": [
-      {
-        "name": "Perfil",
-        "icon": "bx-user",
-        "url": "/area-restrita/perfil/perfil-page.html"
-      },
-      {
-        "name": "Editar Perfil",
-        "icon": "bx-cog",
-        "url": "/area-restrita/perfil/editar-perfil-page.html"
-      },
-      {
-        "name": "Editar Senha",
-        "icon": "bx-lock",
-        "url": "/area-restrita/perfil/editar-senha-page.html"
+        "name": "CRM Dashboard",
+        "icon": "fa-solid fa-chart-line",
+        "url": "/area-restrita/crm-dashboard/crm-dashboard-page.html"
       }
     ]
   };

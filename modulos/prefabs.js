@@ -258,6 +258,13 @@ export function createSidebar(nivel, paginaAtual) {
 
     const liElements = `
 
+        <li class="menu-item ${paginaAtual === "crm-dashboard" ? "active" : ""}">
+            <a href="${nivel}/area-restrita/crm-dashboard/crm-dashboard-page.html" class="menu-link">
+                <i class="menu-icon icon-base fa-solid fa-chart-line"></i>
+                <div data-i18n="CRM Dashboard">CRM Dashboard</div>
+            </a>
+        </li>
+
         <li class="menu-item ${paginaAtual === "perfil" ? "active open" : paginaAtual === "editar-perfil" ? "active open" : paginaAtual === "editar-senha" ? "active open" : ""}">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon icon-base bx bx-user"></i>
@@ -283,14 +290,14 @@ export function createSidebar(nivel, paginaAtual) {
                     </a>
                 </li>
             </ul>
-            
-            <li class="menu-item ${paginaAtual === "chat" ? "active" : ""}">
-                <a href="${nivel}/area-restrita/chat/chat-page.html" class="menu-link">
-                    <i class="menu-icon icon-base bx bx-chat"></i>
-                    <div data-i18n="Chat">Chat</div>
-                </a>
-            </li>
         </li>   
+            
+        <li class="menu-item ${paginaAtual === "chat" ? "active" : ""}">
+            <a href="${nivel}/area-restrita/chat/chat-page.html" class="menu-link">
+                <i class="menu-icon icon-base bx bx-chat"></i>
+                <div data-i18n="Chat">Chat</div>
+            </a>
+        </li>
     `;
     const layoutMenuInnerElement = document.querySelector(".menu-inner");
     if (layoutMenuInnerElement) {
@@ -374,6 +381,9 @@ export function createSidebar(nivel, paginaAtual) {
             } 
         }); 
     }    
+
+    const sidebarReady = new Event('sidebarReady');
+    document.dispatchEvent(sidebarReady);
 
     return new Promise(resolve => requestAnimationFrame(resolve));
 }
